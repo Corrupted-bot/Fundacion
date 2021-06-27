@@ -1,0 +1,24 @@
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+.carousel-inner img {
+  max-width: 500px;
+  max-height: 500px;
+  margin: 0 auto;
+}
+.carousel-control-prev,
+.carousel-control-next
+{
+  width: 700px;
+  bottom: 5%;
+
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon{
+  width: 800px;
+  height: 50px;
+}

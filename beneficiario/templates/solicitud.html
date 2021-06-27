@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">{{solicitud.nombre}}</h1>
+        {% if solicitud.imagen %}
+            <img src="{{solicitud.imagen.url}}" alt="..." width="200" height="300">
+        {% else %}
+            <br>
+        {% endif %}
+        <br>
+        <p class="lead">Código de la Solicitud: {{solicitud.id}}</p>
+        <p class="lead">Su rut es: {{solicitud.rut}}</p>
+        <p class="lead">Su teléfono es: {{solicitud.telefono}}</p>
+        <p class="lead">Su email es: {{solicitud.email}}</p>
+        
+        <hr class="my-4">
+
+        <a class="btn btn-secondary btn-lg" href="/solicitudes" role="button">Volver</a>
+        <a class="btn btn-success btn-lg" href="/solicitud/{{ solicitud.id }}/estado"  role="button">Aprobar</a>
+        <a class="btn btn-primary btn-lg" href="/solicitud/{{ solicitud.id }}/update" role="button">Actualizar</a>
+        <a class="btn btn-danger btn-lg" href="/solicitud/{{ solicitud.id }}/delete" role="button">Borrar</a>
+        
+    </div>
+{% endblock %}
+

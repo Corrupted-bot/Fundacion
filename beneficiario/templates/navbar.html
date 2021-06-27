@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+  <div class="container-fluid">
+    <a class="navbar-brand " href="{% url 'index' %}"><img src="https://static.wixstatic.com/media/373854_c37028edd5ff409898653618ffff4945~mv2_d_6657_1969_s_2.png/v1/fill/w_210,h_67,al_c,q_80,usm_0.66_1.00_0.01/373854_c37028edd5ff409898653618ffff4945~mv2_d_6657_1969_s_2.webp"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/solicitudes">Solicitudes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="">Seguimiento</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link active dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" >  {{ user.username   }}  </a>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item"  href="{% url 'logout' %}">Cerrar Sesion</a>
+          </div>
+        </li>
+      </ul>
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Iniciar Sesion</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'signup' %}">Registrarse</a>
+        </li>
+        {% endif %}
+    </div>
+  </div>
+</nav>
+

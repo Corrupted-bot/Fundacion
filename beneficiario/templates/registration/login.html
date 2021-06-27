@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="width: 20rem;">
+    <br>
+    <br>
+    <h4 class="card-tittle">Ingrese su usuario y clave</h4>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table class="table table-borderless App-header">
+            {{ form.as_table }}
+            <tr>
+                <td colspan="2">
+                    <button type="submit" class="btn btn-lg btn-primary btn-block">Iniciar Sesion</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+{% endblock %}
